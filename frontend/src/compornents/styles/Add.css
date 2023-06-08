@@ -1,15 +1,15 @@
 .add {
-  height: 150px;
-  width: 120px;
-  font-size: 100px;
+  height: 262px;
+  width: 210px;
+  font-size: 174px;
   color: rgb(200, 200, 200);
   background-color: rgb(245, 245, 245);
-  border: 6px double rgb(200, 200, 200);
+  border: 10px double rgb(200, 200, 200);
   border-radius: 4%;
   box-sizing: border-box;
 }
 
 .add:hover {
   cursor: pointer;
-  border: 2px solid rgb(255, 158, 61);
+  border: 6px solid rgb(255, 158, 61);
 }

@@ -1,8 +1,8 @@
 .card {
-  height: 150px;
-  width: 120px;
+  height: 262px;
+  width: 210px;
   background-color: white;
-  border: 1px solid rgb(230, 230, 230);
+  border: 2px solid rgb(200, 200, 200);
   border-radius: 4%;
   overflow: hidden;
   box-sizing: border-box;
@@ -10,7 +10,7 @@
 
 .card:hover {
   cursor: pointer;
-  border: 2px solid rgb(255, 158, 61);
+  border: 6px solid rgb(255, 158, 61);
 }
 
 .card__item-image-wrapper {
@@ -27,5 +27,5 @@
 
 .card__item-name {
   height: 20%;
-  font-size: 10px;
+  font-size: 18px;
 }

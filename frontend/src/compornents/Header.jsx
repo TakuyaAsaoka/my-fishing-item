@@ -22,7 +22,7 @@ export default function Header(props) {
         <h1 className="header__title">My Fishing Item</h1>
       </div>
       <div className="header__search-wrapper">
-        <FaSearch color="rgb(85,85,85)" size="0.7em" />
+        <FaSearch color="rgb(85,85,85)" size="1.2em" />
         <input
           type="text"
           className="header__search-box"
@@ -32,7 +32,7 @@ export default function Header(props) {
         ></input>
         {searchWord ? (
           <button className="header__search-clear" onClick={handleSearchWordClear}>
-            <TiDelete color="rgb(85,85,85)" />
+            <TiDelete color="rgb(85,85,85)" size="1.6em" />
           </button>
         ) : (
           ''

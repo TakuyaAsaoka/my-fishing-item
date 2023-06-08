@@ -4,7 +4,7 @@
 }
 
 .sidebar__title {
-  font-size: 14px;
+  font-size: 24px;
 }
 
 ul {
@@ -12,13 +12,13 @@ ul {
 }
 
 li {
-  height: 26px;
-  font-size: 12px;
+  height: 46px;
   list-style: none;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .sidebar__button {
+  font-size: 22px;
   height: 100%;
   width: 100%;
   background-color: transparent;

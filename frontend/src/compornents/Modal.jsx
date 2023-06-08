@@ -37,7 +37,7 @@ export default function Modal(props) {
     <div className="modal">
       <div className="modal__content">
         <button className="modal__button-clear" onClick={handleCloseModal}>
-          <TiDelete color="rgb(85,85,85)" size="1.1em" />
+          <TiDelete color="rgb(85,85,85)" size="2em" />
         </button>
         <div className="modal__image-wrapper">
           <img className="modal__image" src={noItemImage} alt="新規アイテム" />
