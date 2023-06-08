@@ -1,0 +1,26 @@
+.sidebar {
+  width: 15%;
+  background-color: white;
+}
+
+.sidebar__title {
+  font-size: 14px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  height: 26px;
+  font-size: 12px;
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+li:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(0, 160, 160);
+  /* border-bottom: 2px solid rgb(255, 158, 61); */
+}

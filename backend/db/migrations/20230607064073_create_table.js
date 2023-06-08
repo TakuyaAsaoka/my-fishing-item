@@ -3,13 +3,9 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable('item', function (table) {
+  return knex.schema.createTable('table', function (table) {
     table.increments('id').primary();
     table.string('name', 32).notNullable();
-    table.integer('quantity').notNullable();
-    table.text('image', 'text');
-    table.integer('category_id').notNullable();
-    table.foreign('category_id').references('id').inTable('category');
   });
 };
 
@@ -18,5 +14,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable('item');
+  return knex.schema.dropTable('table');
 };
