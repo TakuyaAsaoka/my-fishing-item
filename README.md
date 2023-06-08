@@ -43,3 +43,6 @@ $ npm start
 * Render
 * Mocha, Chai
 # Future Roadmap
+* AWSのS3を使った画像ファイルの管理
+* ログイン機能の実装
+* AWSのS3を使った画像ファイルの管理
