@@ -4,4 +4,5 @@
   padding: 35px 70px;
   flex-wrap: wrap;
   gap: 18px 18px;
+  align-content: flex-start;
 }

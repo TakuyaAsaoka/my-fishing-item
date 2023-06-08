@@ -9,5 +9,9 @@ exports.seed = async function (knex) {
     { item_id: 4, quantity: 1 },
     { item_id: 5, quantity: 1 },
     { item_id: 6, quantity: 1 },
+    { item_id: 7, quantity: 1 },
+    { item_id: 8, quantity: 1 },
+    { item_id: 9, quantity: 1 },
+    { item_id: 10, quantity: 1 },
   ]);
 };

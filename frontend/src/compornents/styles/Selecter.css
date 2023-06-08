@@ -1,0 +1,11 @@
+.selecter {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  border-radius: 6px;
+}
+
+.selecter__select {
+  width: 150px;
+  font-size: 18px;
+}

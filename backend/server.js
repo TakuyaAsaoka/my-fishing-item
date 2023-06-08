@@ -70,6 +70,21 @@ app.post('/api/items', async (req, res) => {
   }
 });
 
+// POST アイテムを釣行パターンごとの持ち物に追加
+app.post('/api/items/:tableId', async (req, res) => {
+  const targetTbl = await knex.select().from('table').where('id', req.params.tableId).first();
+  const selectedItem = req.body.selectedItem;
+  const insertArray = selectedItem.map((elm) => ({ item_id: elm, quantity: 1 }));
+  try {
+    await knex(targetTbl.name).insert(insertArray);
+    const items = await knex.select().from(targetTbl.name);
+    res.status(200).json(items);
+  } catch (e) {
+    console.error('Error', e);
+    res.status(500);
+  }
+});
+
 // Delete 選択されたアイテムを削除
 app.delete('/api/items', async (req, res) => {
   const selectedItem = req.body.selectedItem;

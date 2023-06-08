@@ -3,7 +3,8 @@ import Add from './Add';
 import Card from './Card';
 
 export default function List(props) {
-  const { serverUrl, state, selectedItem, setSelectedItem, showModal, setShowModal } = props;
+  const { serverUrl, state, selectedItem, setSelectedItem, showModal, setShowModal, tableId } =
+    props;
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -25,11 +26,11 @@ export default function List(props) {
       setCards(result);
     }
     fetchData();
-  }, [state, selectedItem, showModal]);
+  }, [state, selectedItem, showModal, tableId]);
 
   return (
     <div className="list">
-      <Add showModal={showModal} setShowModal={setShowModal} />
+      {state === '' ? <Add showModal={showModal} setShowModal={setShowModal} /> : null}
       {cards}
     </div>
   );

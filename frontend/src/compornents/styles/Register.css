@@ -1,12 +1,12 @@
-.delete {
+.register {
   position: fixed;
   height: 80px;
   width: 80px;
-  top: 235px;
+  top: 150px;
   right: 40px;
   border-radius: 6px;
 }
 
-.delete:hover {
+.register:hover {
   cursor: pointer;
 }

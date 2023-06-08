@@ -11,7 +11,6 @@ export default function Delete(props) {
       'Content-Type': 'application/json',
     };
     const option = { method, headers, body: JSON.stringify(body) };
-    console.log(body);
     await fetch(`${serverUrl}/api/items`, option);
     setSelectedItem([]);
   }
