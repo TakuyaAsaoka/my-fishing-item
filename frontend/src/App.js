@@ -17,7 +17,7 @@ export function App() {
   const serverUrl = 'http://localhost:8080';
 
   // 初期はALL選択状態
-  const [state, setState] = useState('');
+  const [state, setState] = useState('2');
   const [showModal, setShowModal] = useState(false);
 
   return (

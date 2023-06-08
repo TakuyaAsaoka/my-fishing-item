@@ -9,8 +9,7 @@ export default function List(props) {
   useEffect(() => {
     let items;
     async function fetchData() {
-      const tableId = state === '' ? state : state.split('-')[1];
-      const response = await fetch(`${serverUrl}/api/items/${tableId}`);
+      const response = await fetch(`${serverUrl}/api/items/${state}`);
       const jsonItems = await response.text();
       items = JSON.parse(jsonItems);
       const result = items.map((item) => (
@@ -19,7 +18,7 @@ export default function List(props) {
       setCards(result);
     }
     fetchData();
-  }, []);
+  }, [state]);
 
   return (
     <div className="list">

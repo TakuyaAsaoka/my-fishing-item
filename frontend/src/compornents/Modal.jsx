@@ -1,28 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import noItemImage from './images/noitem.png';
 import { TiDelete } from 'react-icons/ti';
 
 export default function Modal(props) {
   const { serverUrl, setShowModal } = props;
 
-  const [categoryId, setCategoryId] = useState(0);
+  const [categoryId, setCategoryId] = useState();
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState(0);
-  // const modalRef = useRef(null);
-
-  // モーダルウィンドウを閉じる
-  // const handleCloseModal = (e) => {
-  //   if (modalRef.current && !modalRef.current.contains(e.target)) {
-  //     setShowModal(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener('mousedown', handleCloseModal);
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleCloseModal);
-  //   };
-  // }, []);
 
   // ステート更新関数
   const handleCategory = (e) => setCategoryId(e.target.value);
@@ -42,8 +27,10 @@ export default function Modal(props) {
       'Content-Type': 'application/json',
     };
     const option = { method, headers, body: JSON.stringify(body) };
-    console.log(body);
     await fetch(`${serverUrl}/api/items`, option);
+    setCategoryId('');
+    setName('');
+    setQuantity(0);
   }
 
   return (
@@ -57,7 +44,12 @@ export default function Modal(props) {
         </div>
         <div className="modal__content-input-wrapper">
           <label>カテゴリー</label>
-          <select className="modal__category" defaultValue="" onChange={handleCategory}>
+          <select
+            className="modal__category"
+            defaultValue=""
+            onChange={handleCategory}
+            value={categoryId}
+          >
             <option value="" disabled>
               カテゴリーを選択してください
             </option>
@@ -71,9 +63,14 @@ export default function Modal(props) {
             <option value={8}>その他</option>
           </select>
           <label>名前</label>
-          <input type="text" placeholder="名前を入力してください" onChange={handleName} />
+          <input
+            type="text"
+            placeholder="名前を入力してください"
+            onChange={handleName}
+            value={name}
+          />
           <label>数量</label>
-          <input type="number" onChange={handleQuantity} />
+          <input type="number" onChange={handleQuantity} value={quantity} />
           <button className="modal__button" onClick={postNewItem}>
             アイテムを登録する
           </button>
