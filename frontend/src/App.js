@@ -14,10 +14,11 @@ import './compornents/styles/Footer.css';
 import './compornents/styles/Modal.css';
 
 export function App() {
-  const serverUrl = 'http://localhost:8080';
+  // const serverUrl = 'http://localhost:8080';
+  const serverUrl = 'https://my-fishing-item-server.onrender.com';
 
   // 初期はALL選択状態
-  const [state, setState] = useState('2');
+  const [state, setState] = useState('');
   const [showModal, setShowModal] = useState(false);
 
   return (
