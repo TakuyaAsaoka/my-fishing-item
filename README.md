@@ -35,3 +35,10 @@ $ npm install
 ```
 $ npm start
 ```
+# Technology
+* Express.js
+* React.js
+* Knex.js
+* Postgres
+* Render
+* Mocha, Chai
