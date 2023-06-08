@@ -13,12 +13,17 @@ export default function List(props) {
       const jsonItems = await response.text();
       items = JSON.parse(jsonItems);
       const result = items.map((item) => (
-        <Card itemName={item.item_name} categoryName={item.category_name} image={item.image} />
+        <Card
+          itemId={item.item_id}
+          itemName={item.item_name}
+          categoryName={item.category_name}
+          image={item.image}
+        />
       ));
       setCards(result);
     }
     fetchData();
-  }, [state]);
+  }, [showModal]);
 
   return (
     <div className="list">

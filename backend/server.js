@@ -14,7 +14,12 @@ app.use(express.json());
 // GET 全てのアイテムをjsonで渡す
 app.get('/api/items', async (req, res) => {
   const items = await knex
-    .select({ item_name: 'item.name', category_id: 'item.category_id', image: 'item.image' })
+    .select({
+      item_id: 'item.id',
+      item_name: 'item.name',
+      category_id: 'item.category_id',
+      image: 'item.image',
+    })
     .from('item')
     .innerJoin('category', `item.category_id`, '=', 'category.id')
     .orderBy('item.id', 'asc');
@@ -26,13 +31,19 @@ app.get('/api/items/:tableId', async (req, res) => {
   const targetTbl = await knex.select().from('table').where('id', req.params.tableId).first();
   // サブクエリ
   const sub = knex
-    .select({ item_name: 'item.name', image: 'item.image', category_id: 'item.category_id' })
+    .select({
+      item_id: 'item.id',
+      item_name: 'item.name',
+      image: 'item.image',
+      category_id: 'item.category_id',
+    })
     .from(targetTbl.name)
     .innerJoin('item', `${targetTbl.name}.item_id`, '=', 'item.id')
     .orderBy('item.id', 'asc')
     .as('sub');
   const items = await knex
     .select({
+      item_id: 'sub.item_id',
       item_name: 'sub.item_name',
       category_name: 'category.name',
       image: 'image',
