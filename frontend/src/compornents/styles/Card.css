@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+.card.selected {
+  border: 6px solid rgb(240, 20, 20) !important;
+}
+
 .card:hover {
   cursor: pointer;
   border: 6px solid rgb(255, 158, 61);

@@ -3,9 +3,7 @@ import React from 'react';
 export default function Sidebar(props) {
   const { setState } = props;
 
-  function handleState(e) {
-    setState(e.target.value);
-  }
+  const handleState = (e) => setState(e.target.value);
 
   return (
     <div className="sidebar">

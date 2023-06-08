@@ -53,7 +53,7 @@ app.get('/api/items/:tableId', async (req, res) => {
   res.status(200).send(items);
 });
 
-// POST /api/items 新規アイテムを追加
+// POST 新規アイテムを追加
 app.post('/api/items', async (req, res) => {
   const newItem = req.body;
   try {
@@ -62,6 +62,19 @@ app.post('/api/items', async (req, res) => {
       quantity: newItem.quantity,
       category_id: newItem.categoryId,
     });
+    const items = await knex.select().from('item');
+    res.status(200).json(items);
+  } catch (e) {
+    console.error('Error', e);
+    res.status(500);
+  }
+});
+
+// Delete 選択されたアイテムを削除
+app.delete('/api/items', async (req, res) => {
+  const selectedItem = req.body.selectedItem;
+  try {
+    await knex('item').whereIn('id', selectedItem).del();
     const items = await knex.select().from('item');
     res.status(200).json(items);
   } catch (e) {

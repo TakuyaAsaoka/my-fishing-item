@@ -1,0 +1,12 @@
+.delete {
+  position: fixed;
+  height: 80px;
+  width: 80px;
+  top: 120px;
+  right: 40px;
+  border-radius: 6px;
+}
+
+.delete:hover {
+  cursor: pointer;
+}
