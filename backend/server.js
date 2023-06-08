@@ -3,7 +3,7 @@ require('dotenv').config({
 });
 const cors = require('cors');
 const knex = require('./knex.js');
-const PORT = process.env.SERVER_PORT;
+const PORT = process.env.SERVER_PORT ?? 8080;
 
 const express = require('express');
 const app = express();
