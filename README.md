@@ -1,48 +1,71 @@
 # About
+
 本アプリは、事前に所有しているアイテムを登録しておくと、釣行時の持ち物をリストアップしてくれる釣具管理アプリです。  
 所有アイテムを一元管理することで余剰在庫回避によるコスト削減と釣行先で気づいてしまった忘れ物によるストレス軽減が期待できます。
+
 # Install
+
 本アプリをローカル環境で動作するには次のステップが必要です。
-1. このリポジトリをクローンします。  
+
+1. このリポジトリをクローンします。
+
 ```
 $ git clone (your clone code)
 ```
-2. カレントディレクトリをbackendディレクトリに変更します。  
+
+2. カレントディレクトリを backend ディレクトリに変更します。
+
 ```
 $ cd my-fishing-item/backend
 ```
-3. backendに必要な依存関係をインストールします。  
+
+3. backend に必要な依存関係をインストールします。
+
 ```
 $ npm install
 ```
-4. ローカルのPostgresDBを指定し、マイグレーションを実行します。
+
+4. ローカルの PostgresDB を指定し、マイグレーションを実行します。
+
 ```
 $ npm run migrate
 ```
+
 5. ローカルサーバーを立ち上げます。
+
 ```
 $ npm run start
 ```
-6. カレントディレクトリをfrontendディレクトリに変更します。
+
+6. カレントディレクトリを frontend ディレクトリに変更します。
+
 ```
 $ cd ../frontend
 ```
-7. frontendに必要な依存関係をインストールします。
+
+7. frontend に必要な依存関係をインストールします。
+
 ```
 $ npm install
 ```
-8. Reactアプリを起動させます。
+
+8. React アプリを起動させます。
+
 ```
 $ npm start
 ```
+
 # Technology
-* Express.js
-* React.js
-* Knex.js
-* Postgres
-* Render
-* Mocha, Chai
+
+- Express.js
+- React.js
+- Knex.js
+- Postgres
+- AWS
+- Render
+- Mocha, Chai
+
 # Future Roadmap
-* AWSのS3を使った画像ファイルの管理
-* ログイン機能の実装
-* AWSのS3を使った画像ファイルの管理
+
+- AWS の S3 を使った画像ファイルの管理
+- ログイン機能の実装
